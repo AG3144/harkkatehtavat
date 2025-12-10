@@ -4,21 +4,21 @@ OHJELMAKOODI
 */
 
 const Ravintola = function () {
-  this.alkuruoat = ['Tomaattikeitto', 'LeipÃ¤', 'Vihersalaatti', 'Salsa'];
+  this.alkuruoat = ['Tomaattikeitto', 'Leipä', 'Vihersalaatti', 'Salsa'];
   this.paaruoat = [
     'Kalakeitto',
     'Makaroonilaatikko',
     'Kasvispihvi',
     'Kanasalaatti',
   ];
-  this.jalkiruoat = ['HedelmÃ¤salaatti', 'JÃ¤Ã¤telÃ¶', 'Pulla', 'Donitsi'];
+  this.jalkiruoat = ['Hedelmäsalaatti', 'Jäätelö', 'Pulla', 'Donitsi'];
   this.juomat = ['Tee', 'Kahvi', 'Maito', 'Mehu'];
   this.alkuruokaHinta = 4;
   this.paaruokaHinta = 6;
   this.jalkiruokaHinta = 4;
   this.juomaHinta = 3;
   this.paikkojenMaara = 15;
-  this.paikat; // TÃ¤hÃ¤n muuttujaan paikkojen taulukko
+  this.paikat; // Tähän muuttujaan paikkojen taulukko
 };
 
 /**
@@ -30,11 +30,11 @@ function generoiBoolean() {
 }
 
 /**
- * Jos 'asiakkaidenMaara' on pienempi tai yhtÃ¤suuri kuin 'paikkojenMaara', luo taulukon 'tilaukset'
- * johon tallennetaan yksittÃ¤isen asiakkaan tilaus. tilaaAteria-funktiolle annetaan satunnaiset boolean arvot
+ * Jos 'asiakkaidenMaara' on pienempi tai yhtäsuuri kuin 'paikkojenMaara', luo taulukon 'tilaukset'
+ * johon tallennetaan yksittäisen asiakkaan tilaus. tilaaAteria-funktiolle annetaan satunnaiset boolean arvot
  * argumentteina.
  *
- * Palauttaa pÃ¤Ã¤tteeksi 'tilaukset' taulukon.
+ * Palauttaa päätteeksi 'tilaukset' taulukon.
  * @param {number} asiakkaidenMaara
  * @return {object} object array
  */
@@ -48,12 +48,12 @@ Ravintola.prototype.syoRavintolassa = function (asiakkaidenMaara) {
   for (let i = 0; i < asiakkaidenMaara; i++) {
     console.log('-------------------------------------------------------');
     console.log(
-      'Tarjoillaan asiakasta numero ' + (i + 1) + '. MitÃ¤ teille saisi olla?'
+      'Tarjoillaan asiakasta numero ' + (i + 1) + '. Mitä teille saisi olla?'
     );
     tilaukset.push(
       this.tilaaAteria(generoiBoolean(), generoiBoolean(), generoiBoolean())
     );
-    console.log('Asiakkaalle tarjoiltu. HyvÃ¤Ã¤ ruokahalua!');
+    console.log('Asiakkaalle tarjoiltu. Hyvää ruokahalua!');
   }
   console.log('-------------------------------------------------------');
   console.log('Kaikille asiakkaille tarjoiltu!');
@@ -62,11 +62,11 @@ Ravintola.prototype.syoRavintolassa = function (asiakkaidenMaara) {
 };
 
 /**
- * Tarkistaa, ettÃ¤ 'asiakkaidenMaara' on suurempi kuin 0, mutta pienempi tai yhtÃ¤suuri kuin 'paikkojenMaara'.
+ * Tarkistaa, että 'asiakkaidenMaara' on suurempi kuin 0, mutta pienempi tai yhtäsuuri kuin 'paikkojenMaara'.
  *
  * Kirjoittaa konsoliin tulosteen tilanteesta, ja palauttaa onnistumisen boolean arvona.
  *
- * Jos 'asiakkaidenMaara' ei ole numero, heittÃ¤Ã¤ TypeErrorin.
+ * Jos 'asiakkaidenMaara' ei ole numero, heittää TypeErrorin.
  * @param {number} asiakkaidenMaara
  * @return {boolean} Onnistuminen
  */
@@ -76,7 +76,7 @@ Ravintola.prototype.tarkistaPaikkojenMaara = function (asiakkaidenMaara) {
   }
   if (asiakkaidenMaara <= 0) {
     console.log(
-      'IkÃ¤vÃ¤ kyllÃ¤ emme voi tarjoilla ' + asiakkaidenMaara + ' asiakkaalle.'
+      'Ikävä kyllä emme voi tarjoilla ' + asiakkaidenMaara + ' asiakkaalle.'
     );
     return false;
   } else if (asiakkaidenMaara <= this.paikkojenMaara) {
@@ -86,38 +86,36 @@ Ravintola.prototype.tarkistaPaikkojenMaara = function (asiakkaidenMaara) {
     return true;
   } else {
     console.log(
-      'IkÃ¤vÃ¤ kyllÃ¤ ravintolaamme ei mahdu ' +
-        asiakkaidenMaara +
-        ' asiakasta.'
+      'Ikävä kyllä ravintolaamme ei mahdu ' + asiakkaidenMaara + ' asiakasta.'
     );
     return false;
   }
 };
 
 /**
- * Luo Ravintolan paikat-muuttujaan uuden taulukon, jonka koko mÃ¤Ã¤rÃ¤ytyy paikkojenMaara-muuttujan mukaisesti,
- * ja tÃ¤yttÃ¤Ã¤ taulukon boolean arvolla false.
+ * Luo Ravintolan paikat-muuttujaan uuden taulukon, jonka koko määräytyy paikkojenMaara-muuttujan mukaisesti,
+ * ja täyttää taulukon boolean arvolla false.
  */
 Ravintola.prototype.generoiPaikat = function () {
-  //Koodisi tÃ¤nne
+  //Koodisi tänne
 };
 
 /**
- * JSDoc tÃ¤nne
+ * JSDoc tänne
  */
 Ravintola.prototype.varaaPaikat = function (varauksenMaara) {
-  //Koodisi tÃ¤nne
+  //Koodisi tänne
 };
 
 /**
- * Ottaa parametreina 3 boolean arvoa, joiden avulla mÃ¤Ã¤ritellÃ¤Ã¤n mitÃ¤ ruokia asiakas tilaa.
- * Jos parametrit eivÃ¤t ole tyyppiÃ¤ boolean, heitetÃ¤Ã¤n TypeError.
+ * Ottaa parametreina 3 boolean arvoa, joiden avulla määritellään mitä ruokia asiakas tilaa.
+ * Jos parametrit eivät ole tyyppiä boolean, heitetään TypeError.
  *
  * Tilaukset tallennetaan 'ruoat' taulukkoon boolean parametrien mukaisesti.
  *
  * Lopuksi kutsutaan 'laskeLasku' funktiota, jolla lasketaan tilauksen lasku.
  *
- * Palauttaa objektin, joka sisÃ¤ltÃ¤Ã¤ numeron ja string-taulukon
+ * Palauttaa objektin, joka sisältää numeron ja string-taulukon
  *
  * @param {boolean} ottaaAlkuruoan
  * @param {boolean} ottaaJalkiruoan
@@ -147,12 +145,12 @@ Ravintola.prototype.tilaaAteria = function (
   }
 
   ruoka = this.palautaTaulukonSatunnainenArvo(this.paaruoat);
-  console.log('Ottaisin pÃ¤Ã¤ruoaksi: ' + ruoka);
+  console.log('Ottaisin pääruoaksi: ' + ruoka);
   ruoat.push(ruoka);
 
   if (ottaaJalkiruoan) {
     ruoka = this.palautaTaulukonSatunnainenArvo(this.jalkiruoat);
-    console.log('Ottaisin jÃ¤lkiruoaksi: ' + ruoka);
+    console.log('Ottaisin jälkiruoaksi: ' + ruoka);
     ruoat.push(ruoka);
   }
 
@@ -178,9 +176,9 @@ Ravintola.prototype.palautaTaulukonSatunnainenArvo = function (taulukko) {
 
 /**
  * Laskee summan annettujen boolean parametrien mukaisesti.
- * Jos parametrit eivÃ¤t ole tyyppiÃ¤ boolean, heittÃ¤Ã¤ TypeErrorin.
+ * Jos parametrit eivät ole tyyppiä boolean, heittää TypeErrorin.
  *
- * 'loppuSumma' muuttujaan lisÃ¤tÃ¤Ã¤n automaattisesti 'paaruokaHinta', ja loput hinnat sitten parametrien mukaisesti.
+ * 'loppuSumma' muuttujaan lisätään automaattisesti 'paaruokaHinta', ja loput hinnat sitten parametrien mukaisesti.
  *
  * Palauttaa lopussa 'loppuSumma'.
  *
